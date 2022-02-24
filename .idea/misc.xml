@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/ic_launcher_background.xml" value="0.3875" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/login_background_white.xml" value="0.30153846153846153" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/login_button_grey.xml" value="0.30625" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/login_button_orange.xml" value="0.4125" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/login_cursor_orange.xml" value="0.4125" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/login_edit_white.xml" value="0.4125" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/main_adv_orange.xml" value="0.3875" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/main_background_grey.xml" value="0.4125" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/main_dialog_white.xml" value="0.24739583333333334" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/main_dialog_white_top.xml" value="0.2758333333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/main_scanline_background.xml" value="0.20520833333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/main_text_white.xml" value="0.3875" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/query_button_background.xml" value="0.290625" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/query_button_orange.xml" value="0.290625" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/query_button_orange2.xml" value="0.30625" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/query_edit_grey.xml" value="0.30625" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/query_text_white.xml" value="0.30625" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/scan_button_background.xml" value="0.30625" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/scan_space_grey.xml" value="0.44" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/scan_text_grey.xml" value="0.44" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/settings_green.xml" value="0.285" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/shape_point_select.xml" value="0.2758333333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/yunpan_switch_ios_thumb.xml" value="0.285" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/drawable/yunpan_switch_ios_track_off.xml" value="0.285" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_login.xml" value="0.3333333333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_login2.xml" value="0.2630208333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_protocol.xml" value="0.29010416666666666" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_query.xml" value="0.29010416666666666" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_scan.xml" value="0.3333333333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_setting.xml" value="0.3333333333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/activity_welcome.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/advanced_preference_switch.xml" value="0.27447916666666666" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/content_login.xml" value="0.2630208333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/dialog_quit.xml" value="0.3333333333333333" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/listview_quit_items.xml" value="0.29010416666666666" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/quit_listview_item.xml" value="0.36666666666666664" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/layout/scan_listview_item.xml" value="0.29739583333333336" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.31354166666666666" />
+        <entry key="..\:/Android_Demo/XiongMaoKuaiShou/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.31354166666666666" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

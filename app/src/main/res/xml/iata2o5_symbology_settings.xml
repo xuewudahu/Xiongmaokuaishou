@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="iata2o5_settings">
+    <com.serenegiant.myapplication.SeekBarPreference
+        android:defaultValue="1"
+        android:key="iata2o5_min_chars"
+        android:max="30"
+        android:title="Minimum number of characters" />
+
+    <ListPreference
+        android:entries="@array/codabar_checksum_entries"
+        android:entryValues="@array/codabar_checksum_values"
+        android:key="iata2o5_checksum"
+        android:title="Checksum" />
+</PreferenceScreen>

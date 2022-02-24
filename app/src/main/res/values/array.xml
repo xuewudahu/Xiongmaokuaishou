@@ -1,0 +1,73 @@
+<resources>
+
+    <string-array translatable="false" name="camera_params">
+        <item>多条码</item>
+        <item>图片解码</item>
+        <item>补光亮度</item>
+        <item>采图模式</item>
+        <item>ISO</item>
+    </string-array>
+
+    <string-array translatable="false" name="camera_save_type">
+        <item>关闭</item>
+        <item>仅成功</item>
+        <item>仅失败</item>
+        <item>所有</item>
+        <item>调试</item>
+    </string-array>
+
+    <string-array translatable="false" name="camera_save_format">
+        <item>yuv</item>
+        <item>png</item>
+        <item>jpeg</item>
+    </string-array>
+
+    <string-array translatable="false" name="camera_list">
+        <item>Camera0</item>
+    </string-array>
+
+    <string-array name="codabar_checksum_entries">
+        <item>No checksum</item>
+        <item>Use checksum and output check char</item>
+        <item>Use checksum and strip check char</item>
+    </string-array>
+    <string-array name="codabar_checksum_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+    </string-array>
+    <string-array name="code11_checksum_entries">
+        <item>No checksum</item>
+        <item>Use 1-digit checksum and output check char</item>
+        <item>Use 1-digit checksum and strip check char</item>
+        <item>Use 2-digit checksum and output check char</item>
+        <item>Use 2-digit checksum and strip check char</item>
+    </string-array>
+    <string-array name="code11_checksum_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+    </string-array>
+    <string-array name="msiplessey_checksum_entries">
+        <item>No checksum</item>
+        <item>Use Mod 10 checksum and output check char</item>
+        <item>Use Mod 10 checksum and strip check char</item>
+        <item>Use Mod 10/10 checksum and output check chars</item>
+        <item>Use Mod 10/10 checksum and strip check chars</item>
+        <item>Use Mod 11/10 checksum and output check char</item>
+        <item>Use Mod 11/10 checksum and strip check char</item>
+    </string-array>
+    <string-array name="msiplessey_checksum_values">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+
+</resources>

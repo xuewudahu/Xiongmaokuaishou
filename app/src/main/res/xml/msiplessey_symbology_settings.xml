@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="msiplessey_settings">
+    <com.serenegiant.myapplication.SeekBarPreference
+        android:defaultValue="1"
+        android:key="msiplessey_min_chars"
+        android:max="30"
+        android:title="Minimum number of characters" />
+
+    <ListPreference
+        android:entries="@array/msiplessey_checksum_entries"
+        android:entryValues="@array/msiplessey_checksum_values"
+        android:key="msiplessey_checksum"
+        android:title="Checksum" />
+</PreferenceScreen>

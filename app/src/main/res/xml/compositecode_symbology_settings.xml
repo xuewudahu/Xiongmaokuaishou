@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="compositecode_settings">
+
+    <CheckBoxPreference
+        android:key="cca"
+        android:title="Component A" />
+
+    <CheckBoxPreference
+        android:key="ccb"
+        android:title="Component B" />
+
+    <CheckBoxPreference
+        android:key="ccc"
+        android:title="Component C" />
+</PreferenceScreen>

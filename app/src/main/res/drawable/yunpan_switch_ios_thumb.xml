@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!--设置开关的滑块图-->
+    <item  android:state_checked="true" >
+        <shape android:shape="oval">
+            <!-- 圆圈大小调整 -->
+            <size android:width="20dp"
+                android:height="20dp"/>
+            <solid android:color="@color/white"/>
+            <stroke android:width="2dp" android:color="#00E079"/>
+        </shape>
+    </item>
+
+    <!-- 控制内圈颜色 -->
+    <item  android:state_checked="false" >
+        <shape android:shape="oval">
+            <!-- 圆圈大小调整 -->
+            <size android:width="20dp"
+                android:height="20dp"/>
+            <solid android:color="#999999"/>
+            <!-- 外圈颜色 -->
+            <stroke android:width="3dp" android:color="@color/white"/>
+        </shape>
+    </item>
+</selector>

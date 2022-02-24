@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="symbologies">
+    <Preference
+        android:key="enable_all"
+        android:title="@string/enable_all" />
+    <Preference
+        android:key="disable_all"
+        android:title="@string/disable_all" />
+    <SwitchPreference
+        android:key="aztec"
+        android:title="@string/aztec" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="codabar"
+        android:title="@string/codabar"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="codablockf"
+        android:title="@string/codablockf" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="code11"
+        android:title="@string/code11"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="code128"
+        android:title="@string/code128"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="code32"
+        android:title="@string/code32" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="code39"
+        android:title="@string/code39"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="code49"
+        android:title="@string/code49" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="code93"
+        android:title="@string/code93"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="composite_code"
+        android:title="@string/compositeCode"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="data_matrix"
+        android:title="@string/data_matrix" />
+    <SwitchPreference
+        android:key="dot_code"
+        android:title="@string/dot_code"/>
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="ean13"
+        android:title="@string/ean13"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="ean8"
+        android:title="@string/ean8"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="grid_matrix"
+        android:title="@string/grid_matrix" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="gs1_databar"
+        android:title="@string/gs1_databar"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="hanxin_code"
+        android:title="@string/hanxin_code" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="hong_kong_2_of_5"
+        android:title="@string/hong_kong_2_of_5"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="iata_2_of_5"
+        android:title="@string/iata_2_of_5"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="interleaved_2_of_5"
+        android:title="@string/interleaved_2_of_5"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="matrix_2_of_5"
+        android:title="@string/matrix_2_of_5"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="maxi_code"
+        android:title="@string/maxi_code" />
+    <SwitchPreference
+        android:key="micropdf417"
+        android:title="@string/micropdf417" />
+    <SwitchPreference
+        android:key="microqr"
+        android:title="@string/microqr" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="msi_plessey"
+        android:title="@string/msi_plessey"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="nec_2_of_5"
+        android:title="@string/nec_2_of_5"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="pdf417"
+        android:title="PDF417" />
+    <SwitchPreference
+        android:key="plessey"
+        android:title="@string/plessey" />
+    <SwitchPreference
+        android:key="qr_code"
+        android:title="@string/qr_code" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:key="straight_2_of_5"
+        android:title="@string/straight_2_of_5"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <SwitchPreference
+        android:key="telepen"
+        android:title="@string/telepen" />
+    <SwitchPreference
+        android:key="trioptic"
+        android:title="@string/trioptic" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="upc-a"
+        android:title="@string/upc_a"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+    <com.xiongmaokuaishou.myapplication.AdvancedPreference
+        android:defaultValue="true"
+        android:key="upc-e"
+        android:title="@string/upc_e"
+        android:widgetLayout="@layout/advanced_preference_switch" />
+
+ <!--       
+    <SwitchPreference
+        android:key="australia_post"
+        android:title="@string/australia_post" />
+    <SwitchPreference
+        android:key="canada_post"
+        android:title="@string/canada_post" />
+    <SwitchPreference
+        android:key="dutch_post"
+        android:title="@string/dutch_post" />
+    <SwitchPreference
+        android:key="japan_post"
+        android:title="@string/japan_post" />
+    <SwitchPreference
+        android:key="korea_post"
+        android:title="@string/korea_post" />
+    <SwitchPreference
+        android:key="royal_mail"
+        android:title="@string/royal_mail" />
+    <SwitchPreference
+        android:key="usps_intelligent_mail"
+        android:title="@string/usps_intelligent_mail" />
+    <SwitchPreference
+        android:key="usps_planet"
+        android:title="@string/usps_planet" />
+    <SwitchPreference
+        android:key="usps_postnet"
+        android:title="@string/usps_postnet" />
+    <SwitchPreference
+        android:key="upu"
+        android:title="@string/upu" />
+-->
+        
+</PreferenceScreen>

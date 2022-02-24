@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="upce_settings">
+
+    <CheckBoxPreference
+        android:key="upce_2digit_supp"
+        android:title="Add 2-digit supplemental" />
+
+    <CheckBoxPreference
+        android:key="upce_5digit_supp"
+        android:title="Add 5-digit supplemental" />
+
+    <CheckBoxPreference
+        android:key="upce_add_space"
+        android:title="Add a space" />
+
+    <CheckBoxPreference
+        android:key="upce_require_supp"
+        android:title="Require supplemental" />
+
+    <CheckBoxPreference
+        android:key="upce_enable_expansion"
+        android:title="Enable expansion" />
+</PreferenceScreen>

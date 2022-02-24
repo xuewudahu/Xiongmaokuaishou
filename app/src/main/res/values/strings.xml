@@ -1,0 +1,61 @@
+<resources>
+    <string name="app_name">熊猫快收</string>
+    <string name="title_activity_login">熊猫快收</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+
+    <string name="enable_all">全部启用</string>
+    <string name="disable_all">全部关闭</string>
+    <string name="aztec">Aztec</string>
+    <string name="bc412">BC412</string>
+    <string name="code11">Code 11</string>
+    <string name="code128">Code 128</string>
+    <string name="code32">Code 32</string>
+    <string name="code39">Code 39</string>
+    <string name="code49">Code 49</string>
+    <string name="code93">Code 93</string>
+    <string name="compositeCode">Composite Code</string>
+    <string name="codabar">Codabar</string>
+    <string name="codablockf">Codablock F</string>
+    <string name="data_matrix">Data Matrix</string>
+    <string name="ean13">EAN-13</string>
+    <string name="ean8">EAN-8</string>
+    <string name="grid_matrix">Grid Matrix</string>
+    <string name="dot_code">Dot Code</string>
+    <string name="gs1_databar">GS1 Databar</string>
+    <string name="hong_kong_2_of_5">Hong Kong 2 of 5</string>
+    <string name="iata_2_of_5">IATA 2 of 5</string>
+    <string name="interleaved_2_of_5">Interleaved 2 of 5</string>
+    <string name="matrix_2_of_5">Matrix 2 of 5</string>
+    <string name="micropdf417">MicroPDF417</string>
+    <string name="microqr">MicroQR</string>
+    <string name="msi_plessey">MSI Plessey</string>
+    <string name="nec_2_of_5">NEC 2 of 5</string>
+    <string name="pdf417">PDF417</string>
+    <string name="pharmacode">Pharmacode</string>
+    <string name="plessey">Plessey</string>
+    <string name="qr_code">QR Code</string>
+    <string name="straight_2_of_5">Straight 2 of 5</string>
+    <string name="telepen">Telepen</string>
+    <string name="trioptic">Trioptic</string>
+    <string name="upc_a">UPC-A</string>
+    <string name="upc_e">UPC-E</string>
+    <string name="australia_post">Australia Post</string>
+    <string name="canada_post">Canada Post</string>
+    <string name="dutch_post">Dutch Post (KIX)</string>
+    <string name="japan_post">Japan Post</string>
+    <string name="korea_post">Korea Post</string>
+    <string name="royal_mail">Royal Mail</string>
+    <string name="usps_intelligent_mail">USPS Intelligent Mail</string>
+    <string name="usps_planet">USPS Planet</string>
+    <string name="usps_postnet">USPS Postnet</string>
+    <string name="upu">UPU ID-tags</string>
+    <string name="hanxin_code">Han Xin Code</string>
+    <string name="maxi_code">MaxiCode</string>
+</resources>

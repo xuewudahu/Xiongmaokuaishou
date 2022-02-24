@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="gs1databar_settings">
+
+    <CheckBoxPreference
+        android:key="gs1databar_omni"
+        android:title="GS1 DataBar Omni/Truncated" />
+
+    <CheckBoxPreference
+        android:key="gs1databar_stacked_omni"
+        android:title="GS1 DataBar Stacked/Stacked Omni" />
+
+    <CheckBoxPreference
+        android:key="gs1databar_limited"
+        android:title="GS1 DataBar Limited" />
+
+    <CheckBoxPreference
+        android:key="gs1databar_expanded"
+        android:title="GS1 DataBar Expanded" />
+
+    <CheckBoxPreference
+        android:key="gs1databar_expanded_stacked"
+        android:title="GS1 DataBar Expanded Stacked" />
+
+</PreferenceScreen>

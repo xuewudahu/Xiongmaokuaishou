@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="code11_settings">
+    <ListPreference
+        android:entries="@array/code11_checksum_entries"
+        android:entryValues="@array/code11_checksum_values"
+        android:key="code11_checksum"
+        android:title="Checksum" />
+</PreferenceScreen>

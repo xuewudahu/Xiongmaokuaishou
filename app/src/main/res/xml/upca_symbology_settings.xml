@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:key="upca_settings">
+
+    <CheckBoxPreference
+        android:key="upca_2digit_supp"
+        android:title="Add 2-digit supplemental" />
+
+    <CheckBoxPreference
+        android:key="upca_5digit_supp"
+        android:title="Add 5-digit supplemental" />
+
+    <CheckBoxPreference
+        android:key="upca_add_space"
+        android:title="Add a space" />
+
+    <CheckBoxPreference
+        android:key="upca_require_supp"
+        android:title="Require supplemental" />
+</PreferenceScreen>

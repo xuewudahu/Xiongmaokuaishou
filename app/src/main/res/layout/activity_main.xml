@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="#BEF1F1F1"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="15dp"
+        android:paddingTop="15dp"
+        android:background="@drawable/main_background_grey">
+
+        <TextView
+            android:id="@+id/main_stationName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="20dp"
+            android:text="熊猫快收魔咒东路悠谷店"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+
+        <ImageView
+            android:id="@+id/main_settings"
+            android:layout_width="36dp"
+            android:layout_height="33dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="17dp"
+            android:layout_toLeftOf="@+id/main_quit_image"
+            android:src="@drawable/main_settings" />
+
+        <ImageView
+            android:id="@+id/main_quit_image"
+            android:layout_width="33dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginEnd="6dp"
+            android:layout_toLeftOf="@+id/main_quit"
+            android:src="@drawable/main_quit" />
+
+        <TextView
+            android:id="@+id/main_quit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            android:layout_gravity="center"
+            android:layout_alignParentRight="true"
+            android:text="退出登录"
+            android:textColor="@color/black"
+            android:textSize="28sp" />
+    </RelativeLayout>
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:layout_gravity="center"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="45dp"
+        android:layout_marginTop="22dp"
+        app:cardCornerRadius="20dp">
+        <com.donkingliang.banner.CustomBanner
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="125dp"
+            app:indicatorStyle="ORDINARY"
+            app:indicatorGravity="CENTER"
+            app:indicatorSelectRes="@drawable/shape_point_select"
+            app:indicatorUnSelectRes="@drawable/shape_point_unselect"
+            app:indicatorInterval="5dp"/>
+    </androidx.cardview.widget.CardView>
+<RelativeLayout
+    android:id="@+id/main_scan"
+    android:layout_width="match_parent"
+    android:layout_height="148dp"
+    android:orientation="horizontal"
+    android:layout_marginStart="20dp"
+    android:layout_marginEnd="20dp"
+    android:background="@drawable/main_text_white">
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="32sp"
+        android:layout_gravity="center"
+        android:layout_marginStart="80dp"
+        android:text="包裹出库"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"/>
+    <ImageView
+        android:layout_width="230dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/main_scan"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="22dp"
+        android:layout_marginBottom="40dp"/>
+
+</RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/main_query"
+        android:layout_width="match_parent"
+        android:layout_height="148dp"
+        android:orientation="horizontal"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/main_text_white">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="32sp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginStart="80dp"
+            android:text="包裹查询"
+            android:textColor="@color/black"/>
+        <ImageView
+            android:layout_alignParentRight="true"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/main_query"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginBottom="40dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
