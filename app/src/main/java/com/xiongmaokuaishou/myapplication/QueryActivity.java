@@ -130,7 +130,7 @@ public class QueryActivity extends AppCompatActivity {
                     httpApi.bmxGetMyParcelListNew(s, new ApiListener() {
                         @Override
                         public void success(Api api) {
-                            Log.d("logcat_qxj----------", "bmxGetMyParcelListNew:success= " + api.jsonObject);
+                            Log.d("logcat_qxj", "bmxGetMyParcelListNew:success= " + api.jsonObject);
                             try {
                                 JSONArray jsonArray = api.jsonObject.getJSONArray("d");
                                 Log.d("qxj--", jsonArray.length() + "--");
@@ -151,7 +151,6 @@ public class QueryActivity extends AppCompatActivity {
                                         String orderId = jsonObject.optString("mailNo", null);
                                         int uploadState = jsonObject.optInt("isHavePic", 0);
                                         String time = jsonObject.optString("lastTimestamp", null);
-                                        Log.d("logcat_qxj","---time:"+time);
                                         String parcelId = jsonObject.optString("parcelId", null);
                                         String arriveTime = jsonObject.optString("arriveTime", null);
                                         Calendar cal = Calendar.getInstance(Locale.ENGLISH);

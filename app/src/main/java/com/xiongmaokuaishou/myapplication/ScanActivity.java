@@ -53,6 +53,7 @@ import com.xiongmaokuaishou.myapplication.utils.SharedPreferences;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -504,7 +505,7 @@ public class ScanActivity extends AppCompatActivity implements RqDecoder.ResultC
                     httpApi.bmxParcelOut(s, new ApiListener() {
                         @Override
                         public void success(Api api) {
-                            Log.d("logcat_qxj--", "bmxParcelOut:success= " + api.jsonObject + "  " + s);
+                            Log.d("logcat_qxj", "bmxParcelOut:success= " + api.jsonObject + "  " + s);
                             long sysTime = System.currentTimeMillis();//获取系统时间
                             int sysTimeSun = Integer.valueOf((String) DateFormat.format("dd", sysTime));//时间显示格式
                             int finallySun = sharedPreferences.getInt("scanSuccessTime", 32);
@@ -562,7 +563,7 @@ public class ScanActivity extends AppCompatActivity implements RqDecoder.ResultC
 
                         @Override
                         public void failure(Api api) {
-                            Log.d("logcat_qxj----------", "OUTPUT:failure= " + api.jsonObject);
+                            Log.d("logcat_qxj", "bmxParcelOut:failure= " + api.jsonObject);
                             Message msg = new Message();
                             msg.what = SCANFAIL;
                             msg.obj = s;
@@ -594,7 +595,8 @@ public class ScanActivity extends AppCompatActivity implements RqDecoder.ResultC
                                     bundle.putString("text", "接口异常");
                                     break;
                                 default:
-                                    bundle.putString("text", "门店登录过期，请重新登录");
+                                    bundle.putString("text", "请重试");
+                                    relogin();
                                     break;
                             }
                             msg.setData(bundle);
@@ -639,5 +641,51 @@ public class ScanActivity extends AppCompatActivity implements RqDecoder.ResultC
         });
     }
 
+    private void relogin() {
+        new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                httpApi.bmxCheckToken(new ApiListener() {
+                    @Override
+                    public void success(Api api) {
+                        Log.d("logcat_qxj", "bmxCheckToken---success-" + api.jsonObject);
+                    }
+
+                    @Override
+                    public void failure(Api api) {
+                        Log.d("logcat_qxj", "bmxCheckToken---failure-" + api.jsonObject);
+                        httpApi.bmxGetToken(sharedPreferences.getString("account",""),sharedPreferences.getString("password",""),LoginActivity.ANDROID_ID,new ApiListener() {
+                            @Override
+                            public void success(Api api) {
+                                Log.d("logcat_qxj","bmxGetToken---success= "+api.jsonObject);
+
+                                try {
+                                    JSONObject value = api.jsonObject.getJSONObject("d");
+                                    httpApi.bmxSaveToken(value.optString("token"));
+                                    sharedPreferences.putString("taken",value.optString("token"));
+                                    sharedPreferences.putBoolean("isLogin",true);
+                                }catch (Exception e){}
+                            }
+
+                            @Override
+                            public void failure(Api api) {
+                                Log.d("logcat_qxj","bmxGetToken---failure-"+api.jsonObject);
+
+                            }
+
+                            @Override
+                            public void onData(Response response) {
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onData(Response response) {
+
+                    }
+                });
+            }
+        },1);
+    }
 
 }

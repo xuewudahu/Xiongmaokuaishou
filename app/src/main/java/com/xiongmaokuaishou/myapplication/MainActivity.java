@@ -17,6 +17,7 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 import android.os.SystemClock;
+import android.text.TextUtils;
 import android.text.format.DateFormat;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -46,6 +47,7 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import okhttp3.Response;
+import okhttp3.internal.Util;
 
 public class MainActivity extends AppCompatActivity {
     public ArrayList<String> images;
@@ -97,7 +99,13 @@ public class MainActivity extends AppCompatActivity {
                 try {
                     JSONObject value = api.jsonObject.getJSONObject("d");
                     stationName = value.optString("stationName");
-                    stationNameTextview.setText(stationName);
+                    if (!TextUtils.isEmpty(stationName) && stationName.length() <= 8) {
+                        stationNameTextview.setText(stationName);
+                    } else if (stationName.length() > 8) {
+                        stationName=stationName.substring(0,9)+"...";
+                        stationNameTextview.setText(stationName);
+                    }
+
                     Log.d("wwwwwqxj", "---" + (Thread.currentThread() == Looper.getMainLooper().getThread()));
                 } catch (Exception e) {
                 }
@@ -105,7 +113,7 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void failure(Api api) {
-                Log.d("wwwwwqxj", "bmxGetStationInfo---failure-" + api.jsonObject);
+                Log.d("logcat_qxj", "bmxGetStationInfo---failure-" + api.jsonObject);
             }
 
             @Override
@@ -119,10 +127,9 @@ public class MainActivity extends AppCompatActivity {
             public void success(Api api) {
                 Log.d("logcat_qxj", "--bmxGetBanner-success"+api.jsonObject);
                 try {
-
                     JSONObject value = api.jsonObject.getJSONObject("d");
                     JSONArray jsonArray = value.getJSONArray("data");
-                    Log.d("qxj", "1---2-" + jsonArray.length());
+                    Log.d("wxw111", "1---2-" + jsonArray.length());
                     for (int i = 0; i < jsonArray.length(); i++) {
                         JSONObject jsonObject = jsonArray.getJSONObject(i);
                         String bannerPicUrl = jsonObject.optString("bannerPicUrl", null);
@@ -137,6 +144,7 @@ public class MainActivity extends AppCompatActivity {
                     handler.sendMessage(msg);// 每隔100毫秒发送一个msg给mHandler
 
                 } catch (Exception e) {
+                    Log.d("wxw1111","---"+e);
                 }
             }
 
@@ -242,13 +250,13 @@ public class MainActivity extends AppCompatActivity {
         mBanner.setOnPageClickListener(new CustomBanner.OnPageClickListener() {
             @Override
             public void onPageClick(int i, Object o) {
-
-                Uri uri = Uri.parse(urls.get(mBanner.getCurrentItem()));
-                Intent intent = new Intent();
-                intent.setAction("android.intent.action.VIEW");
-                intent.setData(uri);
-                startActivity(intent);
-
+              if(!TextUtils.isEmpty(urls.get(mBanner.getCurrentItem()))){
+                  Uri uri = Uri.parse(urls.get(mBanner.getCurrentItem()));
+                  Intent intent = new Intent();
+                  intent.setAction("android.intent.action.VIEW");
+                  intent.setData(uri);
+                  startActivity(intent);
+              }
             }
         });
         mBanner.setPages(new CustomBanner.ViewCreator<String>() {
@@ -311,7 +319,7 @@ public class MainActivity extends AppCompatActivity {
                         httpApi.bmxGetToken(sharedPreferences.getString("account",""),sharedPreferences.getString("password",""),LoginActivity.ANDROID_ID,new ApiListener() {
                             @Override
                             public void success(Api api) {
-                                Log.d("logcat_qxj----------","bmxGetToken---success- token:= "+api.jsonObject);
+                                Log.d("logcat_qxj","bmxGetToken---success- token:= "+api.jsonObject);
 
                                 try {
                                     JSONObject value = api.jsonObject.getJSONObject("d");

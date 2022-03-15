@@ -284,7 +284,7 @@ public class httpNetApi extends Api {
         //hashMap.put("accountPassword", ApiUtil.ACCOUNT_PASSWORD);
         body.put("apiName", apiName);
         body.put("bizData", bizData);
-        Log.d("logcat_qxj", "---token " + bmxToken);
+        Log.d("qxj", "---token " + bmxToken);
         body.put("token", bmxToken);
         body.put("timestamp", currTime);
         body.put("sign", ApiUtil.md5(bizData + ApiUtil.ACCOUNT_NAME + apiName + bmxToken + currTime + ApiUtil.ACCOUNT_PASSWORD));

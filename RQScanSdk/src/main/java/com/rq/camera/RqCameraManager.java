@@ -29,6 +29,7 @@ import com.rq.misc.MiscUtil;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 import androidx.annotation.NonNull;
@@ -47,7 +48,7 @@ public class RqCameraManager{
      */
     public final static int CAMERA_API_ONE = 1;
     public final static int CAMERA_API_TWO = 2;
-    public final static int DEFAULT_CAMERA_API = CAMERA_API_ONE;
+    public final static int DEFAULT_CAMERA_API = CAMERA_API_TWO;
     /**
      * cameraId需要提前赋值，预览尺寸需要提前获取
      */
@@ -141,10 +142,12 @@ public class RqCameraManager{
                             @Override
                             public void onOpened(CameraDevice camera) {
                                 mCamera = camera;
+
                                try {
                                     /**
                                      * 配置预览回调
                                      */
+                                   textureView.getSurfaceTexture().setDefaultBufferSize(2560,1920);
                                     mCamera.createCaptureSession(surfaceList, new CameraCaptureSession.StateCallback() {
                                         @Override
                                         public void onConfigured(CameraCaptureSession cameraCaptureSession) {
@@ -160,11 +163,15 @@ public class RqCameraManager{
                                                         surfaceList) {
                                                     previewRequestBuilder.addTarget(surface);
                                                 }
+
                                         /*Range<Integer>[] ranges = getFPSRange();
                                         for(Range range:ranges) {
                                             Log.i(TAG,"FPS: range"+range.getLower()+"~"+range.getUpper());
                                         }*/
-                                                //previewRequestBuilder.set(CaptureRequest.CONTROL_SCENE_MODE,CaptureRequest.CONTROL_SCENE_MODE_SPORTS);
+//                                                previewRequestBuilder.set(CaptureRequest.CONTROL_SCENE_MODE,CaptureRequest.CONTROL_SCENE_MODE_SPORTS);
+//                                               previewRequestBuilder.set(CaptureRequest.CONTROL_AF_MODE, CaptureRequest.CONTROL_AF_MODE_CONTINUOUS_PICTURE);
+//                                               previewRequestBuilder.set(CaptureRequest.CONTROL_AF_TRIGGER,CaptureRequest.CONTROL_AF_TRIGGER_IDLE);
+                                                //previewRequestBuilder.set(CaptureRequest.CONTROL_MODE, CaptureRequest.CONTROL_MODE_AUTO);
                                                 previewRequestBuilder.set(CaptureRequest.CONTROL_AE_TARGET_FPS_RANGE, new Range<Integer>(60, 60));
                                                 CaptureRequest previewRequest = previewRequestBuilder.build();//显示预览
                                                 cameraCaptureSession.setRepeatingRequest(previewRequest, null, null);
@@ -394,6 +401,12 @@ public class RqCameraManager{
         int bestPreviewWidth=0,bestPreviewHeight=0;
         try {
            CameraCharacteristics props = mCameraManager.getCameraCharacteristics(mCameraId);
+             Range<Integer>[] fpsRanges;
+
+            // 该相机的FPS范围
+            fpsRanges = props.get(CameraCharacteristics.CONTROL_AE_AVAILABLE_TARGET_FPS_RANGES);
+            Log.d("FPS", "SYNC_MAX_LATENCY_PER_FRAME_CONTROL: " + Arrays.toString(fpsRanges));
+
             StreamConfigurationMap configurationMap = props.get(
                     CameraCharacteristics.SCALER_STREAM_CONFIGURATION_MAP);
             Size[] availablePreviewSizes = configurationMap.getOutputSizes(SurfaceTexture.class);
@@ -431,7 +444,6 @@ public class RqCameraManager{
     public void setDisplayRotation(int rotation) {
         this.rotation = rotation;
         if (mCameraOne != null) {
-            Log.d("wxwGQ","旋转角度是： "+rotation);
             mCameraOne.setDisplayOrientation(rotation);
         }
     }

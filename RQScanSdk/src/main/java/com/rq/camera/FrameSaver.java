@@ -40,7 +40,7 @@ public class FrameSaver {
     /**
      * 文件路径名称
      */
-    private final static String DEFAULT_FOLDER_PATH = "/Android/data/com.serenegiant.myapplication/files/";
+    private final static String DEFAULT_FOLDER_PATH = "/Android/data/com.xiongmaokuaishou.myapplication/files/";
     private final static String DEFAULT_FAILED_PREFIX = "FAILED_";
     private final static String DEFAULT_SUCCESS_PREFIX = "SUCCESS_";
     private final static String DEFAULT_DEBUG_PREFIX = "DEBUG_";

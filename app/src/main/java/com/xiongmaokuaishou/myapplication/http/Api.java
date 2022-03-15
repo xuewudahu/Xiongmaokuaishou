@@ -149,7 +149,7 @@ public abstract class Api {
                 apiListener.onData(response);
             }
         };
-        Log.d("logcat_qxj","API-okHttpCallback--"+okHttpCallback.toString());
+
         OkHttpUtil.post(getUrl(), okHttpCallback, paramsMap);
     }
 

@@ -62,8 +62,6 @@ public class OkHttpUtil {
                 .url(url)
                 .build();
         call = okHttpClient.newCall(request);
-        Log.d("logcat_qxj","-okHttpCallback--"+okHttpCallback.toString());
-        Log.d("logcat_qxj","-call--"+call.toString());
         call.enqueue(okHttpCallback);
     }
 

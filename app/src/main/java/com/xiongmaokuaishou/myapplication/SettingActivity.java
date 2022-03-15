@@ -17,6 +17,8 @@ import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.dou361.dialogui.DialogUIUtils;
 import com.xiongmaokuaishou.myapplication.utils.SharedPreferences;
 
 @SuppressLint("UseSwitchCompatOrMaterialCode")
@@ -39,6 +41,7 @@ public class SettingActivity extends AppCompatActivity {
         if (sharedPreferences == null) {
             sharedPreferences = SharedPreferences.getInstance();
         }
+        DialogUIUtils.init(this);
         settingCode=findViewById(R.id.settings_code);
         switchFacecamera = findViewById(R.id.face_camera);
         switchScancamera = findViewById(R.id.scan_camera_switch);
@@ -101,7 +104,7 @@ public class SettingActivity extends AppCompatActivity {
                 case R.id.setting_button:
                     if (!settingEdit.getText().toString().isEmpty()) {
                         sharedPreferences.putInt("MultipleCode",Integer.valueOf(settingEdit.getText().toString()));
-                        Toast.makeText(SettingActivity.this, "设置成功", Toast.LENGTH_SHORT).show();
+                        DialogUIUtils.showToastCenter("设置成功");
                     }
 
                     break;

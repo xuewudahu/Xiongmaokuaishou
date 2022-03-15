@@ -107,6 +107,7 @@ public class RqDecodeComponent extends RelativeLayout implements RqDecoder.Resul
                     if(rqCameraManager != null) {
                         if (RqCameraManager.DEFAULT_CAMERA_API == RqCameraManager.CAMERA_API_TWO) {
                             if(mSurface == null && mTextureView != null)
+                                rqCameraManager.setTextureView(mTextureView);
                                 mSurface = new Surface(mTextureView.getSurfaceTexture());
                             if (!rqCameraManager.addSurface(mSurface)) {
                                 if (MiscUtil.DEBUG)

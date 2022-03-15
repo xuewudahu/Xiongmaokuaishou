@@ -128,7 +128,7 @@ public class ExpressAdapter extends ArrayAdapter<Express> {
             httpApi.bmxGetParcelPic(express.getParcelId(), express.getArriveTime(), new ApiListener() {
                 @Override
                 public void success(Api api) {
-                    Log.d("logcat_qxj----------", "bmxGetParcelPic:success= " + api.jsonObject);
+                    Log.d("logcat_qxj", "bmxGetParcelPic:success= " + api.jsonObject);
                     JSONObject value = null;
                     try {
                         value = api.jsonObject.getJSONObject("d");
@@ -165,7 +165,7 @@ public class ExpressAdapter extends ArrayAdapter<Express> {
 
                 @Override
                 public void failure(Api api) {
-                    Log.d("qxj","---bmxGetParcelPic-failure"+api.jsonObject);
+                    Log.d("logcat_qxj","---bmxGetParcelPic-failure"+api.jsonObject);
                 }
 
                 @Override

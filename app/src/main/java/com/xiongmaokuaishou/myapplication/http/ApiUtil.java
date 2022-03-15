@@ -29,14 +29,18 @@ public class ApiUtil {
 
 
     public final static String IP_PORT = "http://api.java.105.100baimi.cn:10099/v3/openBmx"; //for BMX platform
+    //public final static String IP_PORT = "http://openapi.pandabg.cn:20099/v3/openBmx"; //for BMX platform
     public final static String LOGIN = IP_PORT;
     public final static String TEMPORARY_TOKEN = IP_PORT + "auth/temporaryToken/";
     public final static String INFO_TOKEN = IP_PORT + "auth/infoToken/";
     public final static String IMAGE_URL_BMX_TEST = "http://xiaoniu.tp.pandabg.cn/c29b9121-decf-4dc6-8f54-0ec372f01a0e.jpg?watermark/3/text/5Ye65bqT5pe26Ze0OjIwMjItMDEtMTAgMTY6MzI6MzI=/fill/I0ZGMDAwMA==/gravity/NorthWest/dx/30/dy/50/fontsize/700/text/5pON5L2c5Lq6OjEyMzQxMjM0NDQw/fill/I0ZGMDAwMA==/gravity/NorthWest/dx/30/dy/100/fontsize/700/text/54aK54yr5b-r5pS25YWo55CD5bqX/fill/I0ZGMDAwMA==/gravity/NorthWest/dx/30/dy/150/fontsize/700";
 
     //for bmx open platform
-    public final static String ACCOUNT_NAME =  "HYD10001";
+     public final static String ACCOUNT_NAME =  "HYD10001";
     public final static String ACCOUNT_PASSWORD =  "4eAAAW04bZH6h2143";
+    // public final static String ACCOUNT_NAME =  "mnamSCzwJ03dyVAI";
+    // public final static String ACCOUNT_PASSWORD =  "sXhU10Vp8jHovj5z";
+
 
     public final static String BMX_API_GET_TOKEN =  "GET_TOKEN";
     public final static String BMX_API_OUTPUT_PARCEL =  "OUTPUT_PARCEL";

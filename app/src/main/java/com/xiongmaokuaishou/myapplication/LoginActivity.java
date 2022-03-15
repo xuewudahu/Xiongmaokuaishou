@@ -118,7 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                     httpApi.bmxGetToken(loginAccountEdit.getText().toString(),loginPasswordEdit.getText().toString(),ANDROID_ID,new ApiListener() {
                         @Override
                         public void success(Api api) {
-                            Log.d("qxj----------","bmxGetToken---success- token:= "+api.jsonObject);
+                            Log.d("logcat_qxj","bmxGetToken---success= "+api.jsonObject);
                             sharedPreferences.putString("account",loginAccountEdit.getText().toString());
                             sharedPreferences.putString("password",loginPasswordEdit.getText().toString());
                             try {
@@ -136,16 +136,17 @@ public class LoginActivity extends AppCompatActivity {
 
                         @Override
                         public void failure(Api api) {
-                            Log.d("qxj","bmxGetToken---failure-"+api.jsonObject);
+                            Log.d("logcat_qxj","bmxGetToken---failure-"+api.jsonObject);
                             try {
                                 if (isConnectedToInternet()) {
                                     String value = api.jsonObject.optString("m");
-                                    if (value.equals("接口异常")) {
-                                        DialogUIUtils.showToastCenter("服务器有异常");
-                                    } else {
-                                            Log.d("qxj", "bmxGetToken---failure111-");
-                                            DialogUIUtils.showToastCenter("账号或密码有错误");
-                                    }
+                                   // if (value.equals("接口异常")) {
+
+                                        DialogUIUtils.showToastCenter(value);
+                                 //   } else {
+                                    //        Log.d("qxj", "bmxGetToken---failure111-");
+                                     //       DialogUIUtils.showToastCenter("账号或密码有错误");
+                                   // }
                                 } else {
                                     Log.d("qxj", "bmxGetToken---failure222-");
                                     DialogUIUtils.showToastCenter("请检查网络连接");
@@ -309,7 +310,7 @@ Log.e("wxw1","--"+s);
                 httpApi.bmxGetToken(sharedPreferences.getString("account",""),sharedPreferences.getString("password",""),ANDROID_ID,new ApiListener() {
                     @Override
                     public void success(Api api) {
-                        Log.d("qxj----------","bmxGetToken---success- token:= "+api.jsonObject);
+                        Log.d("logcat_qxj","bmxGetToken---success- token:= "+api.jsonObject);
 
                         try {
                             JSONObject value = api.jsonObject.getJSONObject("d");
@@ -323,7 +324,7 @@ Log.e("wxw1","--"+s);
 
                     @Override
                     public void failure(Api api) {
-                        Log.d("qxj","bmxGetToken---failure-"+api.jsonObject);
+                        Log.d("logcat_qxj","bmxGetToken---failure-"+api.jsonObject);
 
                     }
 

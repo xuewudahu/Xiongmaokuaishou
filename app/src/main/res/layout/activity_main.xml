@@ -21,7 +21,7 @@
             android:layout_alignParentLeft="true"
             android:layout_gravity="center"
             android:layout_marginStart="20dp"
-            android:text="熊猫快收魔咒东路悠谷店"
+            android:text="熊猫快收"
             android:textColor="@color/black"
             android:textSize="28sp" />
 

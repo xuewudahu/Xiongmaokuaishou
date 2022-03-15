@@ -108,6 +108,14 @@ public class CameraTexture2 extends TextureView {
     private httpNetApi httpApi;
     private String arriveTime;
     private String parcelId;
+    private String path1;
+    private String arriveTime2;
+    private String parcelId2;
+    private String path2;
+    private String arriveTime3;
+    private String parcelId3;
+    private String path3;
+    private Bitmap bitmap_decode;
     static {
         ORIENTATIONS.append(Surface.ROTATION_90, 0);//0
         ORIENTATIONS.append(Surface.ROTATION_0, 90);//1
@@ -137,7 +145,6 @@ public class CameraTexture2 extends TextureView {
         MiscUtil.setListener(new MiscUtil.Listener() {
             @Override
             public void savePicture(Bitmap bitmap,String s) {
-
                 bitmapDecode=bitmap;
                 orderId=s;
             }
@@ -174,11 +181,12 @@ public class CameraTexture2 extends TextureView {
     private final BroadcastReceiver MyBroadcastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
-            Log.d("zzz","接收广播拍照“");
+           Log.d("logcat_qxj","--------接收到的扫码图片");
+           bitmap_decode =AdroidUtil.adjustPhotoRotation(bitmapDecode,180);
            parcelId= intent.getStringExtra("parcelId");
            arriveTime= intent.getStringExtra("arriveTime");
            Log.d("qxj","---"+parcelId+"---"+arriveTime);
-            lockFocus();
+          lockFocus();
         }
     };
 
@@ -722,6 +730,7 @@ public class CameraTexture2 extends TextureView {
             = new ImageReader.OnImageAvailableListener() {
         @Override
         public void onImageAvailable(ImageReader reader) {
+
             //等图片可以得到的时候获取图片并保存
             Image image = reader.acquireNextImage();
             ByteBuffer buffer = image.getPlanes()[0].getBuffer();
@@ -733,8 +742,8 @@ public class CameraTexture2 extends TextureView {
             Bitmap bitmap_face1=AdroidUtil.setImgSize(bitmapImage,480,640);
             Log.d("picture------2","--");
             Bitmap bitmap_face=AdroidUtil.adjustPhotoRotation(bitmap_face1,90);
-            Log.d("picture------3","--");
-           Bitmap bitmap_decode=AdroidUtil.adjustPhotoRotation(bitmapDecode,180);
+
+
             Log.d("picture------4","--");
             Bitmap bitmap1 = Bitmap.createBitmap(
                     bitmap_decode.getWidth(),
@@ -745,31 +754,43 @@ public class CameraTexture2 extends TextureView {
             Canvas canvas = new Canvas(bitmap1);
             canvas.drawBitmap(bitmap_decode, 0, 0, null);
             canvas.drawBitmap(bitmap_face, bitmap_decode.getWidth()-bitmap_face.getWidth()-64,64, null);
-            Log.d("picture------6","--"+mContext.getExternalFilesDir(null));
-            String path =mContext.getExternalFilesDir(null)+"/"+orderId+".jpg";
 
-            AdroidUtil.rgbSave(bitmap1, path);
+             path1 =mContext.getExternalFilesDir(null)+"/"+orderId+".jpg";
+            Log.d("picture------6","--"+mContext.getExternalFilesDir(null)+"/"+path1);
+            AdroidUtil.rgbSave(bitmap1, path1);
             Thread thread = new Thread(){
                 @Override
                 public void run() {
                     super.run();
-                    httpApi.bmxUploadParcel(parcelId, arriveTime, path, new ApiListener() {
+                    Log.d("logcat_qxj","---bmxUploadParcel_2-"+parcelId);
+                    httpApi.bmxUploadParcel(parcelId2, arriveTime2, path2, new ApiListener() {
                         @Override
                         public void success(Api api) {
-                            Log.d("qxj--picture333---","---bmxUploadParcel-success"+api.jsonObject);
+                            Log.d("logcat_qxj","---bmxUploadParcel-success"+api.jsonObject);
+                            deleteSingleFile(path1);
+
                         }
                         @Override
                         public void failure(Api api) {
-                            Log.d("qxj","---bmxUploadParcel-failure"+api.jsonObject);
+                            parcelId3=parcelId2;
+                            arriveTime3=arriveTime2;
+                            path3=path2;
+                            Log.d("logcat_qxj","---bmxUploadParcel-failure"+api.jsonObject);
                             new Handler().postDelayed(new Thread(){
                                 @Override
                                 public void run() {
                                     super.run();
-                                    httpApi.bmxUploadParcel(parcelId, arriveTime, path, new ApiListener() {
+                                    Log.d("logcat_qxj","---bmxUploadParcel_3-"+parcelId);
+                                    httpApi.bmxUploadParcel(parcelId3, arriveTime3, path3, new ApiListener() {
                                         @Override
-                                        public void success(Api api) {}
+                                        public void success(Api api) {
+                                            Log.d("logcat_qxj","---bmxUploadParcel-success"+api.jsonObject);
+                                            deleteSingleFile(path1);
+                                        }
                                         @Override
-                                        public void failure(Api api) {}
+                                        public void failure(Api api) {
+                                            Log.d("logcat_qxj","---bmxUploadParcel-failure"+api.jsonObject);
+                                        }
                                         @Override
                                         public void onData(Response response) {}
                                     });
@@ -783,16 +804,20 @@ public class CameraTexture2 extends TextureView {
                     });
                 }
             };
-            Log.d("logcat_qxj-", "bmxUploadParcel= ");
-            httpApi.bmxUploadParcel(parcelId, arriveTime, path, new ApiListener() {
+            Log.d("logcat_qxj","---bmxUploadParcel_1-"+parcelId);
+            httpApi.bmxUploadParcel(parcelId, arriveTime, path1, new ApiListener() {
                 @Override
                 public void success(Api api) {
-                    Log.d("logcat_qxj1-","---bmxUploadParcel-success"+api.jsonObject);
+                    Log.d("logcat_qxj","---bmxUploadParcel-success"+api.jsonObject);
+                    deleteSingleFile(path1);
                 }
 
                 @Override
                 public void failure(Api api) {
-                    Log.d("qxj","---bmxUploadParcel-failure"+api.jsonObject);
+                    Log.d("logcat_qxj","---bmxUploadParcel-failure"+api.jsonObject);
+                    parcelId2=parcelId;
+                    arriveTime2=arriveTime;
+                    path2=path1;
                    new Handler().postDelayed(thread,10*1000);
                 }
 
@@ -816,7 +841,22 @@ public class CameraTexture2 extends TextureView {
             image.close();
         }
     };
-
+    public static boolean deleteSingleFile(String filePath$Name) {
+        File file = new File(filePath$Name);
+        // 如果文件路径所对应的文件存在，并且是一个文件，则直接删除
+        if (file.exists() && file.isFile()) {
+            if (file.delete()) {
+                Log.e("--wxwtime--", "Copy_Delete.deleteSingleFile: 删除单个文件" + filePath$Name + "成功！");
+                return true;
+            } else {
+                Log.e("wxwtime", "删除单个文件" + filePath$Name + "失败！");
+                return false;
+            }
+        } else {
+            Log.e("wxwtime", "删除单个文件失败：" + filePath$Name + "不存在！");
+            return false;
+        }
+    }
     private int getOrientation(int rotation) {
         return (ORIENTATIONS.get(rotation) + mSensorOrientation) % 360;
     }

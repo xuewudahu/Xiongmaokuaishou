@@ -16,6 +16,7 @@ import com.rq.camera.FrameSaver;
 import com.rq.camera.MImage;
 import com.rq.camera.RqCameraManager;
 
+import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
@@ -362,6 +363,7 @@ public class MiscUtil {
         int height = bitmap.getHeight();
         return Bitmap.createBitmap(bitmap, 0, 0, width , height);
     }
+  static   int ie=2;
     /**
      * 把桢中数据存为yuv数据格式到sdcard
      * @param data
@@ -372,36 +374,40 @@ public class MiscUtil {
     public static String rgbSave(Context context,byte[] data, String path,int rgbFormat) {
         if(DEBUG)
             Log.d(TAG, "rgbSave  name:=" + path);
-        File imageFile = new File(Environment.getExternalStorageDirectory() + path + getSuffix(rgbFormat));
+        File imageFile = new File(Environment.getExternalStorageDirectory() + "/"+path + getSuffix(rgbFormat));
         bitmap = nv21ToBitmap(context,data,RqCameraManager.DecodePreviewWidth, RqCameraManager.DecodePreviewHeight);
         mLinstener.savePicture(bitmap,path);
-        Log.d("picture------00000","--1111");
-//        Log.d("picture  rgbSave","----"+Environment.getExternalStorageDirectory().getPath()+"/123.jpg");
-//        BufferedOutputStream bos = null;
-//        try {
-//            bos = new BufferedOutputStream(new FileOutputStream(imageFile));
-//            bitmap.compress(getBitmapCompressFormat(rgbFormat), FrameSaver.QUALITY, bos);
-//            bos.flush();
-//            bos.close();
-//            bitmap.recycle();
-//        } catch (Exception e) {
-//            e.printStackTrace();
-//            if(DEBUG)
-//                Log.d(TAG, "rgbSave  write exception:"+e.getMessage());
-//            return null;
-//        } finally {
-//            if (bos != null) {
-//                try {
-//                    bos.close();
-//                    bos = null;
-//                } catch (IOException e) {
-//                    e.printStackTrace();
-//                }
-//            }
-//            if(bitmap != null) {
+        Log.d("logcat_qxj------00000","--rgbSave保存的图片"+imageFile);
+        Log.d("picture  rgbSave","----"+Environment.getExternalStorageDirectory().getPath()+"/123.jpg");
+//        if(ie==2){
+//            ie=1;
+//            BufferedOutputStream bos = null;
+//            try {
+//                bos = new BufferedOutputStream(new FileOutputStream(imageFile));
+//                bitmap.compress(getBitmapCompressFormat(rgbFormat), FrameSaver.QUALITY, bos);
+//                bos.flush();
+//                bos.close();
 //                bitmap.recycle();
-//            }
-//            imageFile = null;
+//            } catch (Exception e) {
+//                e.printStackTrace();
+//                if(DEBUG)
+//                    Log.d(TAG, "rgbSave  write exception:"+e.getMessage());
+//                return null;
+//            } finally {
+//                if (bos != null) {
+//                    try {
+//                        bos.close();
+//                        bos = null;
+//                    } catch (IOException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//                if(bitmap != null) {
+//                    bitmap.recycle();
+//                }
+//                imageFile = null;
+//        }
+//
 //        }
         return Environment.getExternalStorageDirectory() + path + getSuffix(rgbFormat);
     }
@@ -535,7 +541,7 @@ public class MiscUtil {
         if(newFile.exists()) {
             if(DEBUG)
                 Log.e(TAG,"getNewFilePathByBarcode error:file exits ，barcode："+barcode);
-            return  null;
+           // return  null; //added by wxw
         }
         /**
          * reutnrn custom path ,like /DCIM/barcode1   /DCIM/barcode2 。。。
